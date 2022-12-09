@@ -16,4 +16,14 @@ public class DailyTask extends Task {
         LocalDate taskDate = getTaskDateTime().toLocalDate();
         return taskDate.equals(date) && taskDate.isBefore(date);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

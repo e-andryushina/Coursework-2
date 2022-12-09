@@ -2,6 +2,7 @@ package schedule.task;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public abstract class Task {
 
@@ -61,13 +62,16 @@ private LocalDateTime taskDateTime;
                 '}';
     }
 
-    public String taskTypeToString(Task task) {
-        switch (task.getTypeOfTask()) {
-            case PERSONAL:
-                return "Личная";
-            case WORK:
-                return "Рабочая";
-        }
-        return taskTypeToString(task);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return taskID == task.taskID && Objects.equals(title, task.title) && Objects.equals(description, task.description) && typeOfTask == task.typeOfTask && Objects.equals(taskDateTime, task.taskDateTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(taskID, title, description, typeOfTask, taskDateTime);
     }
 }

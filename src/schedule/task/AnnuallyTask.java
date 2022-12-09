@@ -19,5 +19,15 @@ public class AnnuallyTask extends Task {
         return taskDate.getDayOfMonth() == date.getDayOfMonth() &&
         taskDate.getMonth().equals(date.getMonth()) && taskDate.isBefore(date);
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
 

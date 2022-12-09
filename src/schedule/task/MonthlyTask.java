@@ -18,5 +18,15 @@ public class MonthlyTask extends Task {
         return (taskDate.getDayOfMonth() == date.getDayOfMonth())
                 && taskDate.isBefore(date);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
 

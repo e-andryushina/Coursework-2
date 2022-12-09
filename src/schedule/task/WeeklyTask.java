@@ -18,4 +18,14 @@ public class WeeklyTask extends Task {
         return taskDate.getDayOfWeek().equals(date.getDayOfWeek())
                 && taskDate.isBefore(date);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

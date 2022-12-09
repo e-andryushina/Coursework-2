@@ -14,4 +14,14 @@ public class SingleTask extends Task {
     public boolean appearsIn(LocalDate date) {
         return getTaskDateTime().toLocalDate().equals(date);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
