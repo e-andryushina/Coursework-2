@@ -35,9 +35,8 @@ public class CourseworkTasks {
             try {
                 print(s);
             }
-            catch (NullPointerException e) {
-                System.out.println(e.getMessage());
-                System.out.println("Ошибка обработана");
+            catch (NewException e) {
+                System.out.println("Ошибка обработана" + e);
             }
         }
     }
@@ -76,9 +75,9 @@ public class CourseworkTasks {
         return perShelf;
     }
 
-    private static void print(String s) {
+    private static void print(String s) throws NewException {
         if (s == null) {
-            throw new NullPointerException("Пожалуйста, введите данные");
+            throw new NewException();
         }
         System.out.println("Значение:" + s);
     }
